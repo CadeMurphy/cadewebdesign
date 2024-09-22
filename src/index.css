@@ -1,13 +1,804 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Apercu", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #2a2a2a; /* Dark text color */
+  text-align: left;
+  background-color: #e0dcc0; /* Light beige background color */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.header {
+  background-color: #2a2a2a; /* Dark gray color from the logo */
+  color: #e0dcc0; /* Light beige text */
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 75px; /* Increased header height */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-left: 20px; /* Space between logo and left edge */
+}
+
+.logo {
+  background-color: #2a2a2a; /* Dark gray matching the header */
+  border: 2px solid #f5d76e; /* Mustard yellow border for emphasis */
+  border-radius: 8px; /* Rounded corners for a softer look */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+  padding: 0; /* Remove padding to eliminate gap */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content; /* Shrink to fit content */
+}
+
+.logo img {
+  height: 70px; /* Size for the logo image */
+  object-fit: contain; /* Maintain aspect ratio */
+  display: block; /* Ensure no extra space around the image */
+  border-radius: 5px; /* Match border radius to the container */
+}
+
+.logo-caption {
+  margin-left: 15px; /* Space between logo and caption */
+  font-size: 1.5rem; /* Adjust font size as needed */
+  font-weight: bold;
+  color: #f5d76e; /* Mustard yellow to match the logo and border */
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center; /* Center the navigation links */
+  flex: 1;
+  position: relative;
+  right: 150px;
+}
+
+.nav-links {
+  display: flex;
+  list-style-type: none;
+  gap: 60px; /* Increased gap for more separation */
+  max-width: 600px; /* Set max-width for the navigation */
+  width: 100%;
+  justify-content: center;
+}
+
+.nav-links li {
+  font-size: 1.2rem; /* Slightly increased font size */
+  font-weight: bold;
+}
+
+.nav-links a {
+  color: #e0dcc0; /* Light beige for link color */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #f5d76e; /* Mustard yellow for hover effect */
+}
+
+/* Home Page stufs */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #e0dcc0; /* Light beige background */
+  color: #2a2a2a; /* Dark text color */
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 20px;
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 50%;
+  padding-right: 20px; /* Space between text and image */
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #2a2a2a; /* Dark text color */
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  color: #4a4a4a; /* Slightly lighter gray for paragraph text */
+  max-width: 100%; /* Make sure the text doesn't overflow */
+  margin: 0 0 20px 0; /* Increase bottom margin for more space */
+}
+
+.get-in-touch-button {
+  padding: 15px 30px; /* Increase padding for a larger button */
+  font-size: 1.2rem; /* Increase font size for larger text */
+  font-weight: bold;
+  color: #e0dcc0; /* Light beige text */
+  background-color: #2a2a2a; /* Dark gray background */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: ;
+}
+
+.get-in-touch-button:hover {
+  background-color: #f5d76e; /* Mustard yellow on hover */
+  color: #2a2a2a; /* Dark text on hover */
+}
+
+.hero-image {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.swoosh {
+  position: absolute;
+  width: 100%;
+  height: 300px;
+  background-color: #2a2a2a; /* Charcoal color for swooshes */
+  z-index: 1; /* Place swooshes behind other content */
+  left: 0;
+}
+
+.swoosh-bottom {
+
+  width: 100%;
+  height: 300px;
+  background-color: #2a2a2a;
+  clip-path: path('M 0 150 Q 500 250, 1000 150 T 2000 150 L 2000 300 L 0 300 Z');
+}
+
+
+.footer {
+  background-color: #2a2a2a;
+  color: #e0dcc0;
+  text-align: center;
+  padding: 20px;
+}
+
+
+
+.what-we-do {
+  background-color: #2a2a2a; /* Same color as the swoosh */
+  color: #e0dcc0; /* Light beige text color */
+  padding: 60px 20px; /* Add padding for spacing */
+  text-align: center;
+  width: 100%;
+}
+
+.what-we-do h2 {
+  font-size: 2rem;
+  color: #f5d76e; /* Mustard yellow */
+  margin-bottom: 20px;
+}
+
+.what-we-do p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 40px auto; /* Center and space below */
+  color: #e0dcc0; /* Light beige text */
+}
+
+.what-we-do a {
+  color: #f5d76e; /* Mustard yellow */
+  text-decoration: none;
+}
+
+.what-we-do a:hover {
+  text-decoration: underline;
+}
+
+.services {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap; /* Wrap items on smaller screens */
+}
+
+.service {
+  max-width: 250px;
+  text-align: center;
+}
+
+.service img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+}
+
+.service h3 {
+  font-size: 1.5rem;
+  color: #f5d76e; /* Mustard yellow */
+  margin-bottom: 10px;
+}
+
+.service p {
+  font-size: 1rem;
+  color: #e0dcc0; /* Light beige text */
+}
+
+.home-container {
+  /* Ensure this covers the entire page content */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+
+.hero, .what-we-do, .pricing {
+  position: relative;
+  z-index: 1;
+}
+
+.swoosh-bottom {
+  /* Adjusting z-index to keep the swoosh above content */
+  position: relative;
+  z-index: 2;
+  background: #2a2a2a; /* Ensure this matches the footer if necessary */
+}
+
+.blemishes {
+  /* Example styling, ensure this doesn't interfere */
+  height: 50px;
+  background: #f0f0f0;
+}
+
+/* Pricing section styling */
+.pricing {
+  background-color: #f5f5dc;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 1; /* Ensures the pricing section is above the dot matrix */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pricing-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.pricing h2 {
+  font-size: 2.5rem;
+  color: #333; /* Slightly softer than black */
+  margin-bottom: 20px;
+  font-family: "Apercu", "Arial", sans-serif;
+}
+
+.pricing-description {
+  font-size: 1.2rem;
+  color: #555; /* Darker grey for description */
+  margin-bottom: 40px;
+  font-family: "Apercu", "Arial", sans-serif;
+}
+
+
+/* Common styles for all pricing cards */
+.pricing-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  width: 300px; /* Default width for other cards */
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: "Apercu", "Arial", sans-serif;
+  border: 2px solid #2a2a2a;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.pricing-card-header {
+  background-color: #006d77; /* Muted teal for retro feel */
+  color: #ffffff;
+  padding: 10px 0;
+  border-radius: 10px 10px 0 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-bottom: 2px solid #2a2a2a;
+}
+
+.pricing-card-header.ecommerce {
+  background-color: #ffb703; /* Retro yellow */
+}
+
+.pricing-card-header.standard {
+  background-color: #fb8500; /* Retro orange */
+}
+
+.pricing-card-header.design {
+  background-color: #023047; /* Deep retro blue */
+}
+
+.price {
+  font-size: 3rem;
+  color: #333; /* Matching text color */
+  margin: 20px 0;
+  font-family: "Apercu", "Arial", sans-serif;
+}
+
+.pricing-features {
+  list-style-type: none;
+  padding: 0;
+  color: #555;
+  text-align: left;
+}
+
+.pricing-features li {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-family: "Apercu", "Arial", sans-serif;
+}
+
+.contact-button {
+  margin-top: auto;          /* Push button to the bottom */
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #2a2a2a;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: #555;
+}
+
+/* Container for the pricing section with dot matrix */
+.pricing_overall {
+  background-image: radial-gradient(circle, #333 1px, transparent 1px);
+  background-size: 20px 20px;
+  padding: 40px 0; /* Add padding to show dot matrix around the section */
+  position: flex;
+  justify-content: center;
+  width: 100%;
+}
+.App-footer {
+  background-color: #333; /* Charcoal color */
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.App-footer a {
+  color: #f5d76e; /* Mustard yellow color for links */
+  text-decoration: none;
+}
+
+.App-footer a:hover {
+  text-decoration: underline; /* Underline on hover for emphasis */
+}
+
+
+/* ABOUT PAGE*/
+
+
+.about-container {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.about-hero h1 {
+  font-size: 3rem;
+  color: #2a2a2a; /* Dark text color */
+}
+
+.about-hero p {
+  font-size: 1.2rem;
+  color: #4a4a4a; /* Slightly lighter gray for paragraph text */
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+  order: 1;
+}
+
+.about-image img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+  order: 2;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  color: #2a2a2a;
+  margin-bottom: 10px;
+}
+
+.section-divider {
+  border: 0;
+  height: 3px;
+  background: #2a2a2a; /* Dark color for dividing line */
+  margin: 10px 0 20px;
+  
+}
+
+.about-text p {
+  font-size: 1.2rem;
+  color: #4a4a4a;
+  line-height: 1.6;
+}
+
+/* Values section */
+.values {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.values h2 {
+  font-size: 2.5rem;
+  color: #2a2a2a;
+  margin-bottom: 10px;
+}
+
+.values-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  position: relative;
+}
+
+.value-item {
+  flex: 1;
+  max-width: 300px;
+  text-align: center;
+  position: relative;
+}
+
+.value-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  color: #ffffff;
+  margin: 0 auto 20px;
+  border: 5px solid #2a2a2a; /* Thick outline */
+  font-size: 2rem;
+}
+
+.value-circle.quality {
+  background-color: #f5d76e; /* Mustard yellow */
+}
+
+.value-circle.communication {
+  background-color: #fb8500; /* Retro orange */
+}
+
+.value-circle.innovation {
+  background-color: #023047; /* Deep retro blue */
+}
+
+.value-number {
+  font-size: 3rem;
+  color: #ffffff;
+}
+
+.value-text h3 {
+  font-size: 1.5rem;
+  color: #2a2a2a;
+  margin-bottom: 10px;
+}
+
+.value-text p {
+  font-size: 1.1rem;
+  color: #4a4a4a;
+  line-height: 1.6;
+}
+
+.about-image {
+  width: 650px; /* Set the desired width */
+  height: 550px; /* Set the desired height */
+  border-radius: 20%; /* Makes the image circular */
+  overflow: hidden; /* Ensures the image doesn't exceed the bounds */
+  object-fit: cover; /* Ensures the image covers the entire area without distortion */
+  border: 2px solid #2a2a2a; /* Outline color and thickness */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+
+
+/* Services */
+
+.services-container {
+  padding: 15px 10px; /* Reduced padding */
+  width: 100%;
+  margin: 0 auto;
+}
+
+.services-hero {
+  text-align: center;
+  margin-bottom: 15px; /* Reduced margin */
+}
+
+.services-hero h1 {
+  font-size: 2.5rem;
+  color: #2a2a2a;
+}
+
+.services-hero p {
+  font-size: 1rem;
+  color: #4a4a4a;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Reduced gap between service items */
+}
+
+.service-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  margin-bottom: 10px; /* Reduced spacing between sections */
+  margin-left: 10px;
+  margin-right: 10px;
+  overflow: hidden;
+}
+
+.service-item-left {
+  flex-direction: row;
+}
+
+.service-item-right {
+  flex-direction: row-reverse;
+}
+
+.service-image {
+  width: 25%; /* Further reduced image width */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border: 3px solid #2a2a2a;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.service-content {
+  width: 65%; /* Adjusted width for the reduced image */
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-content h2 {
+  font-size: 1.5rem;
+  color: #2a2a2a;
+  margin-bottom: 10px;
+}
+
+.service-content p {
+  font-size: 1rem;
+  color: #4a4a4a;
+  line-height: 1.4;
+}
+
+/* Background colors for each section */
+.service-item-web .service-content {
+  background-color: #f5d76e; /* Mustard yellow */
+  color: #2a2a2a;
+}
+
+.service-item-seo .service-content {
+  background-color: #ffb703; /* Lighter retro yellow */
+  color: #2a2a2a;
+}
+
+.service-item-branding .service-content {
+  background-color: #fb8500; /* Retro orange */
+  color: #ffffff;
+}
+
+/* Standalone Point: Lifetime Updates */
+.standalone-point {
+  margin-top: 20px; /* Reduced margin */
+  text-align: center;
+  padding: 15px; /* Reduced padding */
+  background-color: #2a2a2a;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.standalone-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.standalone-content h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.standalone-content p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.standalone-image {
+  width: 65%; /* Reduced image width */
+  height: auto;
+  margin-top: 10px; /* Reduced margin */
+  border-radius: 10px;
+}
+
+
+
+/* Contact */
+
+/* Contact Page */
+
+/* General styling */
+.contact-container {
+  padding: 60px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace; /* Retro font style */
+  background-color: #f4f4f9;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contact-container h1 {
+  font-size: 2.5rem;
+  color: #ffb703; /* Retro yellow */
+  margin-bottom: 20px;
+  text-transform: uppercase; /* Retro style text */
+  border-bottom: 3px solid #fb8500; /* Retro orange underline */
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.contact-container p {
+  font-size: 1.2rem;
+  color: #2a2a2a;
+  margin-bottom: 40px;
+}
+
+.contact-details p {
+  font-size: 1rem;
+  color: #4a4a4a;
+}
+
+.contact-details a {
+  color: #2a2a2a;
+  text-decoration: none;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-group label {
+  font-size: 1.1rem;
+  color: #2a2a2a;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: inherit; /* Retro font consistency */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #fb8500; /* Retro orange */
+  outline: none;
+}
+
+.submit-button {
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  color: #fff;
+  background-color: #2a2a2a; /* Dark background */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.submit-button:hover {
+  background-color: #ffb703; /* Retro yellow */
 }
